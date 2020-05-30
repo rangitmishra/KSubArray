@@ -10,4 +10,4 @@ How to run this program
    6 3
    4 8 15 16 23 42
    You will get output here
-5. If you want run again repeat from steps <b>
+7. If you want run again repeat from steps 5
