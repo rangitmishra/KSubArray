@@ -4,12 +4,13 @@ public class KSubArray {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str1 = sc.nextLine();
-        int n = Integer.parseInt(str1.split(" ")[0]);
-        int k = Integer.parseInt(str1.split(" ")[1]);
+        String inputLine1 = sc.nextLine();
+        int n = Integer.parseInt(inputLine1.split(" ")[0]);
+        int k = Integer.parseInt(inputLine1.split(" ")[1]);
+
+        String inputLine2 = sc.nextLine();
+        String[] nums = inputLine2.split(" ");
         int[] arr = new int[n];
-        String str2 = sc.nextLine();
-        String[] nums = str2.split(" ");
         if(nums.length != n) {
             throw new RuntimeException("Invalid input, 'n' and 'input array' length is not equal");
         }
@@ -22,9 +23,7 @@ public class KSubArray {
             System.out.println(String.format("%s is invalid value for number of partitions.", k));
         } else if(!ifArrayIsSorted(arr)) {
             System.out.println("The array is not sorted");
-        } else
-         {
-
+        } else {
             int[][] dp = new int[k][arr.length];
 
             for(int i=0;i<k;i++) {
@@ -34,14 +33,11 @@ public class KSubArray {
                     } else {
                         dp[i][j] = -1;
                     }
-
-
                 }
             }
 
             System.out.println(getMin(arr,0,k, dp));
         }
-
 
     }
 
